@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Invitación Creativa</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+
+  .message-box {
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .button-green {
+    background-color: #2ecc71;
+    color: white;
+    width: 150px;
+  }
+
+  .button-red {
+    background-color: #e74c3c;
+    color: white;
+    width: 150px;
+  }
+
+  .button-green:hover, .button-red:hover {
+    opacity: 0.8;
+  }
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="message-box">
+    <h2>Nos vemos el jueves y peleamos un ratico con par polas 🍻 😉</h2>
+  </div>
+  <div class="buttons">
+    <button class="button button-green" onclick="showLocation()">Listo ✅</button>
+    <button class="button button-red" onclick="shrinkButton()">Mejor después</button>
+  </div>
+  <p id="location" style="display:none;">Ubicación: <a href="https://maps.app.goo.gl/ccD3d2GNgpTNBE9f6?g_st=ic">[📍 Aqui nos vemos]</a></p>
+</div>
+
+<script>
+  function showLocation() {
+    var location = document.getElementById('location');
+    location.style.display = 'block';
+  }
+
+  function shrinkButton() {
+    var greenButton = document.querySelector('.button-green');
+    var redButton = document.querySelector('.button-red');
+    var greenWidth = greenButton.offsetWidth;
+    var redWidth = redButton.offsetWidth;
+    greenButton.style.width = (greenWidth + 20) + 'px';
+    redButton.style.width = (redWidth - 20) + 'px';
+  }
+</script>
+
+</body>
